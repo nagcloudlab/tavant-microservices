@@ -1,0 +1,11 @@
+rabbitmq:
+    image: 'rabbitmq:3.6.6-management'
+    ports:
+      - "4369:4369"
+      - "5672:5672"
+      - "15672:15672"
+      - "25672:25672"
+      - "35197:35197"
+    volumes:
+      - ./data:/var/lib/rabbitmq
+      - ./data/logs:/var/log/rabbitmq
