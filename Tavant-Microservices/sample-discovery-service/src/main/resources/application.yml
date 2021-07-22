@@ -1,0 +1,32 @@
+server:
+    port: ${PORT:8761}
+eureka:
+    client:
+        registerWithEureka: false
+        fetchRegistry: true
+
+    server:
+        enable-self-preservation: true
+#        eviction-interval-timer-in-ms: 60
+#        response-cache-update-interval-ms: 30
+
+    instance:
+#        lease-renewal-interval-in-seconds: 30
+#        lease-expiration-duration-in-seconds: 90
+        instance-id: ${spring.application.name}
+#        prefer-ip-address: true
+
+spring:
+    cloud:
+        inetutils:
+            ignored-interfaces:
+                - eth1*
+            preferred-networks:
+                - 192.168
+
+#security:
+#    basic:
+#        enabled: true
+#    user:
+#        name: admin
+#        password: admin123
